@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
+    <title>CGS Digital Solutions</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#contactform-index').on('submit', function (e) {
+                e.preventDefault(); //Prevents default submit
+                var form = $(this);
+                var post_url = form.attr('action');
+                var post_data = form.serialize(); //Serialized the form data
+                $.ajax({
+                    type: 'POST',
+                    url: './inc/index-mailer.php', // Your form script
+                    data: post_data,
+                    success: function (msg) {
+                        $('#contactform-index')[0].reset(); // to reset form data
+                        //alert('Success');
+                    },
+                    error: function(){
+                        alert("Error sending e-mail");
+                    }
+                }).done(function (msg) {
+                    setTimeout(function () {
+                        alert("Form submitted successfully! We'll get back to you soon. Thank you.");
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F5F8FA;
+            z-index: 9998;
+            text-align: center;
+        }
+        .plane-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+<body>
+<!-- Pre loader -->
+<div id="loader" class="loader">
+    <div class="plane-container">
+        <div class="l-s-2 blink">LOADING</div>
+    </div>
+</div>
+
+<div id="app" class="paper-loading">
+<div class="nav-absolute nav-sticky nav-light">
+    <!-- Header -->
+    <nav class="mainnav navbar navbar-default justify-content-between">
+       <div class="container relative">
+           <a class="offcanvas dl-trigger paper-nav-toggle" type="button" data-toggle="offcanvas"
+                   aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <i></i>
+           </a>
+           <a class="navbar-brand" href="index.html">
+               <img class="d-inline-block align-top" alt="" src="assets/img/basic/cgs-logo.png">
+           </a>
+           <div class="paper_menu">
+               <div id="dl-menu" class="xv-menuwrapper responsive-menu">
+					<ul class="dl-menu align-items-center">
+						<li><a href="index.html#">Home</a></li>
+						<li><a href="about-us.html#">About Us</a></li>
+						<li><a href="services.html#">Services</a></li>
+						<li><a href="portfolio.html#">Portfolio</a></li>
+						<li><a href="contact-us.html#">Contact Us</a></li>
+					</ul>
+				</div>
+			<!-- Login modal -->
+           </div>
+       </div>
+    </nav>
+</div>
+<main class="overflow-hide">
+    
+	<!-- Slider Section -->
+    <section>
+        <div class="xv-slider-wrap has-overlay" style="background: url(./assets/img/dummy/home1.jpg); padding: 10% 0;">
+            <div class="lightSlider slider_controls1"
+                 data-item="1"
+                 data-slides="1"
+                 data-loop="true"
+                 data-pager="false"
+                 data-gallery="false"
+                 data-auto="false">
+                <div class="xv-slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 fadeInLeft animated">
+                                <div class="xv-slider-content clearfix color-white">
+                                    <h1>We Help Businesses Grow Every Step Along the Way</h1>
+                                    <!-- <p>Sed eget orci eleifend enim mattis suscipit. Suspendisse potenti non ipsum. </p> -->
+                                </div>
+                            </div>
+                            <!-- <div class="hidden-xs hidden-sm col-md-6 fadeInLeft animated" style="text-align: center;">
+                                <img src="assets/img/demo/slider/app-development.png" alt="">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="xv-slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 fadeInRight animated">
+                                <div class="xv-slider-content clearfix color-white">
+                                    <h1>TOP DESIGN</h1>
+                                    <p>Sed eget orci eleifend enim mattis suscipit. Suspendisse potenti non ipsum. </p>
+                                    <div class="p-t-40">
+                                        <a href="#" class="btn btn-primary btn-lg">Hire Us Now!</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden-xs hidden-sm col-md-6 fadeInLeft animated">
+                                <img src="assets/img/demo/slider/services.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="xv-slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 fadeInRight animated">
+                                <div class="xv-slider-content clearfix color-white">
+                                    <h1>TOP DESIGN</h1>
+                                    <p>Sed eget orci eleifend enim mattis suscipit. Suspendisse potenti non ipsum. </p>
+                                    <div class="p-t-40">
+                                        <a href="#" class="btn btn-primary btn-lg">Hire Us Now!</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden-xs hidden-sm col-md-6 fadeInLeft animated">
+                                <img src="assets/img/demo/slider/services1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+			<div class="overlay" data-start="#5590D6" data-end="#A345C1" data-orientation="toleft" data-opacity=".4">
+		</div>
+		
+		</div><!--slider Wrap-->
+		
+    </section>
+    <!-- Slider Section -->
+    
+	<!--Services Section Start-->
+	<section class="section service-blocks no-m white">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 mx-lg-auto">
+					<header>
+						<h2 class="my-3">Our Services</h2>
+						<!-- <p>Some supper friendly can be used as section subtitle</p> -->
+					</header>
+				</div>
+			</div>
+			<div class="p-t-b-40">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="service-block center paper-block">
+							<div class="service-icon"><img src="assets/img/icon/idea.png">
+							</div>
+							<div class="service-content">
+								<h3 class="my-3"><a href="#">Product  Ideation</a></h3>
+								<p>Ideas and Creative Brainstorming</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="service-block center paper-block">
+							<div class="service-icon"><img src="assets/img/icon/strategy.png">
+							</div>
+							<div class="service-content">
+								<h3 class="my-3"><a href="#">Strategy</a></h3>
+								<p>Brainstorming, Research and Discovery</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="service-block center paper-block">
+							<div class="service-icon"><img src="assets/img/icon/conversation.png">
+							</div>
+							<div class="service-content">
+								<h3 class="my-3"><a href="#">Consultancy</a></h3>
+								<p>Tech Audit and Custom Solution</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="service-block center paper-block">
+							<div class="service-icon"><img src="assets/img/icon/ux.png">
+							</div>
+							<div class="service-content">
+								<h3 class="my-3"><a href="#">UI/ UX</a></h3>
+								<p>User Experience, User Interface and Branding</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="service-block center paper-block">
+							<div class="service-icon"><img src="assets/img/icon/maintenance.png">
+							</div>
+							<div class="service-content">
+								<h3 class="my-3"><a href="#">Implement & Maintain</a></h3>
+								<p>Web, Mobile & Custom Development</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="service-block center paper-block">
+							<div class="service-icon"><img src="assets/img/icon/megaphone.png">
+							</div>
+							<div class="service-content">
+								<h3 class="my-3"><a href="#">Digital Marketing</a></h3>
+								<p>Online Presence, Promotion & Analytics</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--Services Section End-->
+	
+	<!--Methodologies Section Start-->
+	<section class="section service-blocks no-m gradient-titanium-radial">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 mx-lg-auto">
+					<header>
+						<h2 class="text-light">Methodology</h2>
+						<p>Our approach to finding the best solution</p>
+					</header>
+				</div>
+			</div>
+			<div class="p-t-b-40">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="service-block text-right">
+							<div class="service-icon rounded-circle float-right">
+								<i class="icon icon-filter_1 text-light" aria-hidden="true"></i>
+							</div>
+							<div class="service-content">
+								<h3><a href="#" class="text-light">Product Vision</a></h3>
+								<p>Tell us your vision for next dsiruptive technology we'll bring it to life</p>
+							</div>
+						</div>
+						<div class="service-block text-right">
+							<div class="service-icon float-right">
+								<i class="icon icon-filter_2 text-light" aria-hidden="true"></i>
+							</div>
+							<div class="service-content">
+								<h3><a href="#" class="text-light">Requirement Gathering</a></h3>
+								<p>We generate a list of requirements functional, system, technical,</p>
+							</div>
+						</div>
+						<div class="service-block text-right">
+							<div class="service-icon rounded-circle float-right">
+								<i class="icon icon-filter_3 text-light" aria-hidden="true"></i>
+							</div>
+							<div class="service-content">
+								<h3><a href="#" class="text-light">Business analysis</a></h3>
+								<p>We analysis the business challenges and pivot accordingly</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 center">
+						<img src="assets/img/dummy/methodology.png">
+					</div>
+					<div class="col-md-3">
+						<div class="service-block">
+							<div class="service-icon">
+								<i class="icon icon-filter_4 text-light" aria-hidden="true"></i>
+							</div>
+							<div class="service-content">
+								<h3><a href="#" class="text-light">User Experience Design</a></h3>
+								<p>We are a design led engineering team, prioritizing experience for high app adoption</p>
+							</div>
+						</div>
+						<div class="service-block ">
+							<div class="service-icon">
+								<i class="icon icon-filter_5 text-light" aria-hidden="true"></i>
+							</div>
+							<div class="service-content">
+								<h3><a href="#" class="text-light">Development & Testing</a></h3>
+								<p>We develop and test, making it easy to asses the product before launch</p>
+							</div>
+						</div>
+						<div class="service-block ">
+							<div class="service-icon  rounded-circle">
+								<i class="icon icon-filter_6 text-light" aria-hidden="true"></i>
+							</div>
+							<div class="service-content">
+								<h3><a href="#" class="text-light">Deploy & Maintenance</a></h3>
+								<p>Systems whereas future-proof sources Synergistically.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--Methodologies Section End-->
+        
+    <!--Portfolio Section Start-->
+    <section class="portfolio p-t-b-100">
+        <div class="container">
+            <header class="section-heading">
+                <h2>Sectors We Cater</h2>
+                <p>Our clients across various sectors love our work</p>
+            </header>
+            <!-- <ul class="project-filter text-center p-b-40">
+                <li class="filter active" data-filter="*">All</li>
+                <li class="filter" data-filter=".type1">Websites</li>
+                <li class="filter" data-filter=".type2">Print</li>
+                <li class="filter" data-filter=".type3">Mobile</li>
+                <li class="filter" data-filter=".type4">Photography</li>
+                <li class="filter" data-filter=".type5">Illustrations</li>
+                <li class="filter" data-filter=".type6">Logo Design</li>
+            </ul> -->
+            <div class="row masonry-container">
+                <div class="col-md-4 masonry-post type1 type2 type6">
+                    <figure>
+                        <div class="img-wrapper">
+                            <img src="assets/img/demo/portfolio/hospitality.jpg" alt="/">
+                            <!-- <div class="img-overlay">
+                                <div class="buttons">
+                                    <a class="btn btn-primary" href="/portfolio-single.html"><i
+                                            class="icon icon-link no-p"></i></a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <figcaption>
+                            <h5>
+                                Hospitality
+                            </h5>
+                            <p>
+                                Online Table Reservation | Table Management
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 masonry-post type1 type2 type6">
+                    <figure>
+                        <div class="img-wrapper">
+                            <img src="assets/img/demo/portfolio/auto-detailing.jpg" alt="/">
+                            <!-- <div class="img-overlay">
+                                <div class="buttons">
+                                    <a class="btn btn-primary" href="/portfolio-single.html"><i
+                                            class="icon icon-link no-p"></i></a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <figcaption>
+                            <h5>
+                                Car Detailing
+                            </h5>
+                            <p>
+                                Concept-to-Launch | ERP | Branding | Digital Marketing
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 masonry-post type1 type2 type6">
+                    <figure>
+                        <div class="img-wrapper">
+                            <img src="assets/img/demo/portfolio/ecommerce.jpg" alt="/">
+                            <!-- <div class="img-overlay">
+                                <div class="buttons">
+                                    <a class="btn btn-primary" href="/portfolio-single.html"><i
+                                            class="icon icon-link no-p"></i></a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <figcaption>
+                            <h5>
+                                E-Commerce
+                            </h5>
+                            <p>
+                                E-Commerce Portal | Payment Gateway
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 masonry-post type1 type2 type6">
+                    <figure>
+                        <div class="img-wrapper">
+                            <img src="assets/img/demo/portfolio/car-rental.jpg" alt="/">
+                            <!-- <div class="img-overlay">
+                                <div class="buttons">
+                                    <a class="btn btn-primary" href="/portfolio-single.html"><i
+                                            class="icon icon-link no-p"></i></a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <figcaption>
+                            <h5>
+                                Car Rental
+                            </h5>
+                            <p>
+                                Car Listing | Car Booking Platform
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+				<div class="col-md-4 masonry-post type1 type2 type6">
+                    <figure>
+                        <div class="img-wrapper">
+                            <img src="assets/img/demo/portfolio/live-classroom.jpg" alt="/">
+                            <!-- <div class="img-overlay">
+                                <div class="buttons">
+                                    <a class="btn btn-primary" href="/portfolio-single.html"><i
+                                            class="icon icon-link no-p"></i></a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <figcaption>
+                            <h5>
+                                Live Digital Classrooms
+                            </h5>
+                            <p>
+                                Live digital classrooms with two way communication
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 masonry-post type1 type2 type6">
+                    <figure>
+                        <div class="img-wrapper">
+                            <img src="assets/img/demo/portfolio/education.jpg" alt="/">
+                            <!-- <div class="img-overlay">
+                                <div class="buttons">
+                                    <a class="btn btn-primary" href="/portfolio-single.html"><i
+                                            class="icon icon-link no-p"></i></a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <figcaption>
+                            <h5>
+                                Education
+                            </h5>
+                            <p>
+                                School Management System | Online Courses
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 masonry-post type1 type2 type6">
+                    <figure>
+                        <div class="img-wrapper">
+                            <img src="assets/img/demo/portfolio/online-consultation.jpg" alt="/">
+                            <!-- <div class="img-overlay">
+                                <div class="buttons">
+                                    <a class="btn btn-primary" href="/portfolio-single.html"><i
+                                            class="icon icon-link no-p"></i></a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <figcaption>
+                            <h5>
+                                Online Medical Consultation
+                            </h5>
+                            <p>
+                                Online medical consultation
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 masonry-post type1 type2 type6">
+                    <figure>
+                        <div class="img-wrapper">
+                            <img src="assets/img/demo/portfolio/pharmacy.jpg" alt="/">
+                            <!-- <div class="img-overlay">
+                                <div class="buttons">
+                                    <a class="btn btn-primary" href="/portfolio-single.html"><i
+                                            class="icon icon-link no-p"></i></a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <figcaption>
+                            <h5>
+                                Pharmacy
+                            </h5>
+                            <p>
+                                Pharmacy Management | Inventory & Billing
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 masonry-post type1 type2 type6">
+                    <figure>
+                        <div class="img-wrapper">
+                            <img src="assets/img/demo/portfolio/healthcare.jpg" alt="/">
+                            <!-- <div class="img-overlay">
+                                <div class="buttons">
+                                    <a class="btn btn-primary" href="/portfolio-single.html"><i
+                                            class="icon icon-link no-p"></i></a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <figcaption>
+                            <h5>
+                                Healthcare
+                            </h5>
+                            <p>
+                                Clinic Management | Online Appointment Booking | Appointment Management
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 masonry-post type1 type2 type6">
+                    <figure>
+                        <div class="img-wrapper">
+                            <img src="assets/img/demo/portfolio/e-vehicle.jpg" alt="/">
+                            <!-- <div class="img-overlay">
+                                <div class="buttons">
+                                    <a class="btn btn-primary" href="/portfolio-single.html"><i
+                                            class="icon icon-link no-p"></i></a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <figcaption>
+                            <h5>
+                                Electric Vehicle
+                            </h5>
+                            <p>
+                                On demand 2 & 4 wheeler Electric Vehicle platform for community
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+				<div class="col-md-4 masonry-post type1 type2 type6">
+                    <figure>
+                        <div class="img-wrapper">
+                            <img src="assets/img/demo/portfolio/iot.jpg" alt="/">
+                            <!-- <div class="img-overlay">
+                                <div class="buttons">
+                                    <a class="btn btn-primary" href="/portfolio-single.html"><i
+                                            class="icon icon-link no-p"></i></a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <figcaption>
+                            <h5>
+                                Internet of Things (IOT)
+                            </h5>
+                            <p>
+                                Automate system and process based on triggers
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+				<div class="col-md-4 masonry-post type1 type2 type6">
+                    <figure>
+                        <div class="img-wrapper">
+                            <img src="assets/img/demo/portfolio/online-pharmacy.jpg" alt="/">
+                            <!-- <div class="img-overlay">
+                                <div class="buttons">
+                                    <a class="btn btn-primary" href="/portfolio-single.html"><i
+                                            class="icon icon-link no-p"></i></a>
+                                </div>
+                            </div> -->
+                        </div>
+                        <figcaption>
+                            <h5>
+                                Online Pharmacy
+                            </h5>
+                            <p>
+                                Online Medicine Delivery
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+			</div>
+            <div class="clearfix"></div>
+            <div class="text-center p-t-b-40">
+                <a href="contact-us.html" class="btn btn-primary btn-lg">Get in Touch!</a>
+            </div>
+        </div>
+    </section>
+	<!--Portfolio Section End-->
+    
+	<!-- Clients Section -->
+    <section class="clients animatedParent animateOnce">
+        <div class="container animated fadeInUpShort">
+            <header class="section-heading">
+                <h2>Recent Clients</h2>
+                <!-- <p>Our Clients love our application here are some clients</p> -->
+            </header>
+            <div class="clients-slider">
+                <ul class="lightSlider" data-item="5" data-controls="false" data-auto="true">
+                    <li>
+                        <img src="assets/img/clients/client-logo-eat2eat.png" alt="">
+                    </li>
+                    <li>
+                        <img src="assets/img/clients/client-logo-goi.png" alt="">
+                    </li>
+                    <li>
+                        <img src="assets/img/clients/client-logo-kiri.png" alt="">
+                    </li>
+                    <li>
+                        <img src="assets/img/clients/client-logo-radon.png" alt="">
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+	<!-- Clients Section -->
+	
+	<!--Testimonials Section End-->
+    <!-- <section class="p-t-b-100  testimonial gradient text-white">
+        <div class="container">
+            <div class="col-lg-10 mx-md-auto">
+                <div class="text-center">
+                    <h2>Testimonials</h2>
+                </div>
+                <ul id="lightSliderGallery" class="lightSlider" data-gallery="true" data-item="1"
+                    data-loop="true" data-thumbitem="6" data-controls="false" data-position="middle">
+                    <li data-thumb="assets/img/dummy/u1.png">
+                        <div class="p-t-40 p-b-40 m-b-50 ">
+                            <p class="text-white"><i class="icon icon-snowflake-o"></i> Lorem ipsum dolor sit amet,
+                                consectetur
+                                adipiscing elit. Praesent egestas justo sed sagittis interdum. Pellentesque
+                                sed ipsum eu risus sagittis varius. Suspendisse sed sapien dictum.</p>
+                            <a
+                                    class="test-web" href="#">JOhn Doe - <span>website.com</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li data-thumb="assets/img/dummy/u2.png">
+                        <div class="p-t-40 p-b-40 m-b-50 ">
+                            <p class="text-white"><i class="icon icon-thumbs-o-up"></i> Lorem ipsum dolor sit amet,
+                                consectetur
+                                adipiscing elit. Praesent egestas justo sed sagittis interdum. Pellentesque
+                                sed ipsum eu risus sagittis varius. Suspendisse sed sapien dictum.</p>
+                            <a
+                                    class="test-web" href="#">JOhn Doe - <span>website.com</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li data-thumb="assets/img/dummy/u5.png">
+                        <div class="p-t-40 p-b-40 m-b-50 ">
+                            <p class="text-white"><i class="icon icon-quote-left"></i> Lorem ipsum dolor sit amet,
+                                consectetur
+                                adipiscing elit. Praesent egestas justo sed sagittis interdum. Pellentesque
+                                sed ipsum eu risus sagittis varius. Suspendisse sed sapien dictum.</p>
+                            <a
+                                    class="test-web" href="#">JOhn Doe - <span>website.com</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section> -->
+	<!--Testimonials Section End-->
+	
+	<!--Contact Section Start-->
+    <section>
+		<div class="content-wrapper animatedParent animateOnce">
+			<div class="container">
+				<div class="contact-us-info p-t-b-40">
+					<div class="row">
+						<div class="col-xl-6 col-lg-6 col-12">
+							<div class="p-t-b-20">
+								<div class="widget widget-address">
+									<header class="section-heading">
+										<h2>Get in Touch</h2>
+									</header>
+									<div class="p-t-b-20"><strong>Leave us a quick note and we will get in touch 
+									with you at the earliest!</strong>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-6 col-xl-6 col-lg-12 col-12 ">
+							<div class="contactFormWrapper ">
+								<form id="contactform-index" action="./inc/index-mailer.php" method="post"  novalidate>
+                                    <div class="row">
+                                        <div class="col-12 col-lg-6">
+                                                <label for="name">Name</label>
+                                                <input type="text"
+                                                       class="form-control"
+                                                       id="name"
+                                                       placeholder=""
+                                                       required>
+                                                <div class="invalid-feedback">
+                                                    Please enter your name.
+                                                </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6">
+                                            <label for="subject" class="required">Subject</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   name="subject"
+                                                   id="subject"
+                                                   placeholder=""
+                                                   required>
+                                            <div class="invalid-feedback">
+                                                Please enter subject.
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="company">Company Name</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   name="company"
+                                                   id="company"
+                                                   placeholder="">
+                                        </div>
+                                        <div class="col-12 col-lg-6">
+                                            <label for="email" class="required">Email Address</label>
+                                            <input type="email"
+                                                   class="form-control"
+                                                   id="email"
+                                                   name="email"
+                                                   placeholder=""
+                                                   required>
+                                            <div class="invalid-feedback">
+                                                Please enter your email.
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6">
+                                            <label for="phone" class="required">Tel/Mob</label>
+                                            <input class="form-control" type="text"
+                                                   name="phone" id="phone">
+                                        </div>
+                                    </div>
+                                    <label for="message" class="required">Message</label>
+                                    <textarea placeholder="Message"
+                                              name="message"
+                                              id="message"
+                                              class="form-control"
+                                              required>
+                                    </textarea>
+                                    <div class="invalid-feedback">
+                                        Please enter message.
+                                    </div>
+                                    <div class="text-right p-t-20">
+                                        <button type="submit" class="btn btn-primary btn-lg"><i class="icon icon-envelope-o"></i> Send
+                                            Message
+                                        </button>
+                                    </div>
+                                </form>
+								<div class="p-t-b-20">
+									<div id="valid-issue" class="alert" style="display:none;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--Contact Section End-->
+    
+</main>
+<footer class="black text-white">
+    <div class="container">
+        <div class="row">
+            <div class=" col-lg-2 col-xl-3 col-12 responsive-phone m-auto"><a href="#" class="brand">
+                <img src="assets/img/basic/cgs-logo.png" alt="Knowledge">
+                <span class="circle"></span>
+            </a>
+            </div>
+            <div class="col-6  col-md-4 col-lg-6 m-auto">
+                <p>We are a product development consultancy with talented software engineers, usability 
+				experts and business analysts which offers low cost high quality solutions</p>
+            </div>
+            <div class="col-6 col-md-12 col-12 col-xl-3 responsive-phone m-auto">
+                <h6>Connect via Social</h6>
+                <ul class="social">
+                    <li class="facebook"><a href="#"><i class="icon icon-facebook"></i></a>
+                    </li>
+                    <li class="twitter"><a href="#"><i class="icon icon-twitter"></i></a>
+                    </li>
+                    <li class="gplus"><a href="#"><i class="icon icon-google-plus"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+		<hr>
+		<div class="row">
+			<div class="copyrights center">
+				<p>&#xA9; 2023 CGS Digital Solutions</p>
+			</div>
+		</div>
+    </div>
+</footer>
+</div>
+<!--End Page page_wrrapper -->
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>
